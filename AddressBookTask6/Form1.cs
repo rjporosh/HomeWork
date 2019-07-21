@@ -110,7 +110,12 @@ namespace AddressBookTask6
        // Person pp = new Person();
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-           
+            p = new Person();
+            p.FirstName = txtFirstName.Text;
+            p.LastName = txtLastName.Text;
+            p.Email = txtEmail.Text;
+            p.Phone = txtPhone.Text;
+
             a.updatePerson(p);
             
             txtFirstName.Text = "";
@@ -153,9 +158,11 @@ namespace AddressBookTask6
                 return;
 
             ListViewItem item = listView1.SelectedItems[0];
+            txtEmail.Enabled = false;
            p = new Person();
-            foreach (Person p in a.listPerson)
+            for (int i =0;i<a.listPerson.Count;i++)
             {
+                p = a.listPerson[i];
                 if (p.FirstName == item.Text)
                 {
                     //fill the text boxes
@@ -167,14 +174,9 @@ namespace AddressBookTask6
                     btnUpdate.Enabled = true;
                     btnDelete.Enabled = true;
                 }
-                //btnAdd.Enabled = true;
             }
 
-            ////fill the text boxes
-            //p.FirstName=txtFirstName.Text = item.Text;
-            //p.LastName= txtLastName.Text = item.SubItems[1].Text;
-            //p.Email=txtEmail.Text = item.SubItems[2].Text;
-            //p.Phone=txtPhone.Text = item.SubItems[3].Text;
+           // txtEmail.Enabled = true;
         }
 
         private void comboBoxSearchBy_SelectedIndexChanged(object sender, EventArgs e)
@@ -224,6 +226,19 @@ namespace AddressBookTask6
                 list();
                 MessageBox.Show("Type something and then select search by.");
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtEmail.Text = "";
+            txtEmail.Enabled = true;
+            txtPhone.Text = "";
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnAdd.Enabled = true;
+            list();
         }
     }
 }

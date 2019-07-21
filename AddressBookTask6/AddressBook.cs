@@ -35,10 +35,10 @@ namespace AddressBookTask6
 
         public void deletePerson(Person person)
         {
-            
-            foreach (Person p in listPerson)
+            Person p;
+            for (int i=0;i<listPerson.Count;i++)
             {
-               // p = new Person();
+                 p = listPerson[i];
                 if (p.Email == person.Email)
                 {
                     listPerson.Remove(p);
@@ -49,15 +49,15 @@ namespace AddressBookTask6
         }
         public void updatePerson(Person person)
         {
-            foreach (Person p in listPerson)
+            Person personToDelete;
+            for (int i = 0; i < listPerson.Count; i++)
             {
-                if (p.Email == person.Email)
+                personToDelete = listPerson[i];
+                if (personToDelete.Email == person.Email)
                 {
-                    listPerson.Remove(p);
-                    //listPerson.Add(person);
+                    listPerson[i] = person;
                 }
             }
-           // return listPerson;
         }
         public List<Person> searchByLastName(string LastName)
         {

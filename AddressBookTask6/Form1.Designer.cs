@@ -50,6 +50,7 @@
             this.LastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Phone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnClear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.Actions.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -174,11 +175,12 @@
             // 
             this.Actions.BackColor = System.Drawing.Color.Goldenrod;
             this.Actions.Controls.Add(this.btnAdd);
+            this.Actions.Controls.Add(this.btnClear);
             this.Actions.Controls.Add(this.btnUpdate);
             this.Actions.Controls.Add(this.btnDelete);
             this.Actions.Location = new System.Drawing.Point(525, 74);
             this.Actions.Name = "Actions";
-            this.Actions.Size = new System.Drawing.Size(201, 165);
+            this.Actions.Size = new System.Drawing.Size(214, 202);
             this.Actions.TabIndex = 3;
             this.Actions.TabStop = false;
             this.Actions.Text = "Control";
@@ -228,7 +230,7 @@
             // 
             // listView1
             // 
-            this.listView1.BackColor = System.Drawing.Color.Chartreuse;
+            this.listView1.BackColor = System.Drawing.Color.White;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.FirstName,
             this.LastName,
@@ -262,6 +264,17 @@
             // 
             this.Phone.Text = "Phone";
             this.Phone.Width = 200;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.BlueViolet;
+            this.btnClear.Location = new System.Drawing.Point(31, 153);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(153, 37);
+            this.btnClear.TabIndex = 0;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // Form1
             // 
@@ -309,6 +322,7 @@
         private System.Windows.Forms.ColumnHeader LastName;
         private System.Windows.Forms.ColumnHeader Email;
         private System.Windows.Forms.ColumnHeader Phone;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 
